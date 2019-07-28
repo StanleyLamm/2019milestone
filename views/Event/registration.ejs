@@ -1,0 +1,37 @@
+<div class="container" style="margin-bottom: 5rem;">
+        <div class="row">
+            <div class="card col-12 col-lg-12">
+                <div class="card-body">
+                    <h4><%= event.eventName %></h4>
+                    <div class="media">
+                        <img class="mr-3" src="<%= event.imgURL %>" style="max-width: 16rem">
+                        <div class="media-body">
+                            <ul class="card list-group list-group-flush" style="margin-bottom: 10px;">
+                                <li class="list-group-item"><%= event.fullDesc %></li>
+                                <li class="list-group-item"><b>Organizer: </b><%= event.organizer %></li>
+                                <li class="list-group-item"><b>Date: </b><%= event.eventDate %></li>
+                                <li class="list-group-item"><b>Time: </b><%= event.time %></li>
+                                <li class="list-group-item"><b>Venue: </b><%= event.venue %></li>
+                                <li class="list-group-item"><b>Quota: </b><%= event.quota %></li>
+                            </ul>
+                            <h3>Registration Users</h3>
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th>user ID</th>
+                                        <th>userName</th>
+                                    </tr>
+                                    <% event.users.forEach( function(model){ %>
+                                    <tr>
+                                        <th><%= model.id %></th>
+                                        <th><%= model.username %></th>
+                                    </tr>
+                                    <% }); %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,20 @@
+<div class="container" style="margin-bottom: 5rem;">
+    <h2>Registered events</h2>
+    <div class="row">
+        <% events.forEach( function(model){ %>
+        <div class="card col-6 col-lg-4" style="margin-bottom: 20px;">
+            <img class="card-img-top" src="<%= model.imgURL %>">
+            <div class="card-body">
+                <h5 class="card-title"><a href="/Event/details/<%= model.id %>"><%= model.eventName %></a></h5>
+                 <div class="card-body" style="padding: 0;">
+                   <ul class="list-group">
+                        <li class="list-group-item">Date: <%= model.eventDate %></li>
+                        <li class="list-group-item">Time: <%= model.time %></li>
+                        <li class="list-group-item">Venue: <%= model.venue %></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <% }); %>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="container" style="margin-bottom: 5rem;">
+    <div class="row">
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <th>ID</th>
+                    <th>Event Name</th>
+                    <th>Organizer</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <% events.forEach( function(model){ %>
+                <tr>
+                    <td><%= model.id %></td>
+                    <td><a href="/Event/details/<%= model.id %>"><%= model.eventName %></a></td>
+                    <td><%= model.organizer %></td>
+                    <td>
+                        <a class="btn btn-warning" href="/Event/update/<%= model.id %>">Update</a>
+                    </td>
+                    <td>
+                        <form action="/Event/delete/<%= model.id %>" method="POST">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                    <td>
+                        <a class="btn btn-info" href="/Event/registration/<%= model.id %>">Registration</a>
+                    </td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</div>

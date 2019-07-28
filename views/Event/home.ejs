@@ -1,0 +1,13 @@
+<div class="container" style="margin-bottom: 5rem;">
+    <div class="row">
+        <% events.forEach( function(model){ %>
+        <div class="card col-12 col-lg-6 p-3">
+            <h4><a href="/Event/details/<%= model.id %>"><%= model.eventName %></a></h4>
+            <div class="media">
+                <img class="mr-3" src="<%= model.imgURL %>" style="max-width: 13rem">
+                <div class="media-body"><%= model.shortDesc %></div>
+            </div>
+        </div>
+        <% }); %>
+    </div>
+</div>
